@@ -11,6 +11,7 @@
 </template>
 
 <script>
+import { db } from '~/plugins/firebase'
 export default {
     data(){
         return {
@@ -22,6 +23,11 @@ export default {
                 { text: 'Slide 5', color: 'danger' }
             ]
         }
+    },
+
+    created(){
+        console.log(db);
     }
+
 }
 </script>
