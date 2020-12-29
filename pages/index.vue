@@ -1,73 +1,27 @@
 <template>
-  <div class="container">
-    <div>
-      <Logo />
-      <h1 class="title">
-        clubDeportivo_tfg
-      </h1>
-      <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--green"
-        >
-          Documentation
-        </a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--grey"
-        >
-          GitHub
-        </a>
-      </div>
-    </div>
-  </div>
+    <b-carousel>
+        <b-carousel-item v-for="(carousel, i) in carousels" :key="i">
+            <section :class="`hero is-medium is-${carousel.color}`">
+                <div class="hero-body has-text-centered">
+                    <h1 class="title">{{carousel.text}}</h1>
+                </div>
+            </section>
+        </b-carousel-item>
+    </b-carousel>
 </template>
 
 <script>
-export default {}
+export default {
+    data(){
+        return {
+            carousels: [
+                { text: 'Slide 1', color: 'primary' },
+                { text: 'Slide 2', color: 'info' },
+                { text: 'Slide 3', color: 'success' },
+                { text: 'Slide 4', color: 'warning' },
+                { text: 'Slide 5', color: 'danger' }
+            ]
+        }
+    }
+}
 </script>
-
-<style>
-.container {
-  margin: 0 auto;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-.title {
-  font-family:
-    'Quicksand',
-    'Source Sans Pro',
-    -apple-system,
-    BlinkMacSystemFont,
-    'Segoe UI',
-    Roboto,
-    'Helvetica Neue',
-    Arial,
-    sans-serif;
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
-}
-
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
-
-.links {
-  padding-top: 15px;
-}
-</style>
