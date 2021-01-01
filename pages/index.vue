@@ -1,4 +1,5 @@
 <template>
+<div>
     <b-carousel>
         <b-carousel-item v-for="(carousel, i) in carousels" :key="i">
             <section :class="`hero is-medium is-${carousel.color}`">
@@ -8,10 +9,16 @@
             </section>
         </b-carousel-item>
     </b-carousel>
+
+    <div style="margin-top:100px; margin-left:100px">
+        <a href="/admin">
+            <button class="button is-black">Admin</button>
+        </a>
+    </div>
+</div>
 </template>
 
 <script>
-import { db } from '~/plugins/firebase'
 export default {
     data(){
         return {
@@ -25,9 +32,6 @@ export default {
         }
     },
 
-    created(){
-        console.log(db);
-    }
 
 }
 </script>
