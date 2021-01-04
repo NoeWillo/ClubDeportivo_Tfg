@@ -1,5 +1,5 @@
 <template>
     <div>
-        <h1>Soy historia del club</h1>
+        <h1>Soy contacto</h1>
     </div>
 </template>

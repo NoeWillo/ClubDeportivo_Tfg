@@ -1,37 +1,26 @@
 <template>
 <div>
-    <b-carousel>
-        <b-carousel-item v-for="(carousel, i) in carousels" :key="i">
-            <section :class="`hero is-medium is-${carousel.color}`">
-                <div class="hero-body has-text-centered">
-                    <h1 class="title">{{carousel.text}}</h1>
-                </div>
-            </section>
-        </b-carousel-item>
-    </b-carousel>
-
+    <navbar></navbar>
+    <carrousel></carrousel>
     <div style="margin-top:100px; margin-left:100px">
         <a href="/admin">
             <button class="button is-black">Admin</button>
         </a>
     </div>
+    <noticias></noticias>
 </div>
 </template>
 
 <script>
+import carrousel from '@/components/index/carrousel.vue'
+import navbar from '@/components/index/navbar.vue'
+import noticias from '~/components/index/noticias.vue'
+
 export default {
-    data(){
-        return {
-            carousels: [
-                { text: 'Slide 1', color: 'primary' },
-                { text: 'Slide 2', color: 'info' },
-                { text: 'Slide 3', color: 'success' },
-                { text: 'Slide 4', color: 'warning' },
-                { text: 'Slide 5', color: 'danger' }
-            ]
-        }
-    },
-
-
+    components: {
+        carrousel,
+        navbar,
+        noticias,
+    }
 }
 </script>
