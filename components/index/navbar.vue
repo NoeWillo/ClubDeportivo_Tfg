@@ -12,6 +12,14 @@
             <b-navbar-item href="/">
                 Inicio
             </b-navbar-item>
+             <b-navbar-dropdown label="Primer Equipo">
+                  <b-navbar-item href="/primer_equipo/plantilla">
+                      Plantilla
+                  </b-navbar-item>
+                  <b-navbar-item href="/primer_equipo/cuerpo_tecnico">
+                      Cuerpo Tecnico
+                  </b-navbar-item>
+            </b-navbar-dropdown>
             <b-navbar-dropdown label="Club">
                   <b-navbar-item href="/club/historia">
                       Historia

@@ -34,7 +34,10 @@
 </template>
 
 <script>
+import { db } from '~/plugins/firebase'
+
 export default {
+
   data() {
     return {
       name: 'Cristiano Ronaldo',

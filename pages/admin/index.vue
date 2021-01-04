@@ -11,64 +11,54 @@
     <label class="menu-toggle" for="menu"><span>Toggle</span></label>
     <ul>
       <li>
-        <a href="#">Menu-1</a>
+        <a href="/">Inicio</a>
       </li>
       <li>
-        <a href="#">Menu-2</a>
+        <a href="/admin">Admin</a>
       </li>
       <li>      
-        <label for="menu-3">Menu-3</label>
-        <input type="checkbox" id="menu-3" name="menu-3" class="menu-checkbox">
+        <label for="primer_equipo">Primer Equipo</label>
+        <input type="checkbox" id="primer_equipo" name="primer_equipo" class="menu-checkbox">
         <div class="menu">
-          <label class="menu-toggle" for="menu-3"><span>Toggle</span></label>
+          <label class="menu-toggle" for="primer_equipo"><span>Toggle</span></label>
           <ul>
             <li>
-              <a href="#">Menu-3-1</a>
-            </li>
-            <li>
-              <label for="menu-3-2">Menu-3-2</label>
-              <input type="checkbox" id="menu-3-2" name="menu-3-2" class="menu-checkbox">
+              <label for="primer_equipo_plantilla">Plantilla</label>
+              <input type="checkbox" id="primer_equipo_plantilla" name="primer_equipo_plantilla" class="menu-checkbox">
               <div class="menu">
-                <label class="menu-toggle" for="menu-3-2"><span>Toggle</span></label>
+                <label class="menu-toggle" for="primer_equipo_plantilla"><span>Toggle</span></label>
                 <ul>
                   <li>
-                    <a href="#">Menu-3-2-1</a>
+                    <a href="/admin/primer_equipo/plantilla/crear_jugador">Añadir Jugador</a>
                   </li>
                   <li>
-                    <a href="#">Menu-3-2-2</a>
+                    <a href="/admin/primer_equipo/plantilla/index_jugadores">Modificar Jugador</a>
                   </li>
-                  <li>
-                    <label for="menu-3-2-3">Menu-3-2-3</label>
-                    <input type="checkbox" id="menu-3-2-3" name="menu-3-2-3" class="menu-checkbox">
-                    <div class="menu">
-                      <label class="menu-toggle" for="menu-3-2-3"><span>Toggle</span></label>
-                      <ul>
-                        <li>
-                          <a href="#">Menu-3-2-3-1</a>
-                        </li>
-                        <li>
-                          <a href="#">Menu-3-2-3-2</a>
-                        </li>
-                        <li>
-                          <a href="#">Menu-3-2-3-3</a>
-                        </li>
-                        <li>
-                          <a href="#">Menu-3-2-3-4</a>
-                        </li>
-                      </ul>
-                    </div>
-                  </li>
-                  <li>
-                    <a href="#">Menu-3-2-4</a>
+                   <li>
+                    <a href="/admin/primer_equipo/plantilla/borrar_jugador">Borrar Jugador</a>
                   </li>
                 </ul>
               </div>
             </li>
+          </ul>
+          <ul>
             <li>
-              <a href="#">Menu-3-3</a>
-            </li>
-            <li>
-              <a href="#">Menu-3-4</a>
+              <label for="primer_equipo_cp">Cuerpo Tecnico</label>
+              <input type="checkbox" id="primer_equipo_cp" name="primer_equipo_cp" class="menu-checkbox">
+              <div class="menu">
+                <label class="menu-toggle" for="primer_equipo_cp"><span>Toggle</span></label>
+                <ul>
+                  <li>
+                    <a href="/admin/primer_equipo/cuerpo_tecnico/crear_cp">Añadir Cuerpo Tecnico</a>
+                  </li>
+                  <li>
+                    <a href="/admin/primer_equipo/cuerpo_tecnico/modificar_cp">Modificar Cuerpo Tecnico</a>
+                  </li>
+                   <li>
+                    <a href="/admin/primer_equipo/cuerpo_tecnico/borrar_cp">Borrar Cuerpo Tecnico</a>
+                  </li>
+                </ul>
+              </div>
             </li>
           </ul>
         </div>
@@ -120,12 +110,12 @@
       </li>
     </ul>
   </div>
-</div><!-- #wrapper -->
+</div>
 
 </template>
 
 <style>
-    /* reset */
+
     * {
       margin: 0;
       padding: 0;
