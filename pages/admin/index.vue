@@ -35,7 +35,7 @@
                     <a href="/admin/primer_equipo/plantilla/index_jugadores">Modificar Jugador</a>
                   </li>
                    <li>
-                    <a href="/admin/primer_equipo/plantilla/borrar_jugador">Borrar Jugador</a>
+                    <a href="/admin/primer_equipo/plantilla/index_jugadores">Borrar Jugador</a>
                   </li>
                 </ul>
               </div>
@@ -49,13 +49,13 @@
                 <label class="menu-toggle" for="primer_equipo_cp"><span>Toggle</span></label>
                 <ul>
                   <li>
-                    <a href="/admin/primer_equipo/cuerpo_tecnico/crear_cp">Añadir Cuerpo Tecnico</a>
+                    <a href="/admin/primer_equipo/cuerpo_tecnico/crear_ct">Añadir Cuerpo Tecnico</a>
                   </li>
                   <li>
-                    <a href="/admin/primer_equipo/cuerpo_tecnico/modificar_cp">Modificar Cuerpo Tecnico</a>
+                    <a href="/admin/primer_equipo/cuerpo_tecnico/index_ct">Modificar Cuerpo Tecnico</a>
                   </li>
                    <li>
-                    <a href="/admin/primer_equipo/cuerpo_tecnico/borrar_cp">Borrar Cuerpo Tecnico</a>
+                    <a href="/admin/primer_equipo/cuerpo_tecnico/index_ct">Borrar Cuerpo Tecnico</a>
                   </li>
                 </ul>
               </div>
@@ -64,19 +64,19 @@
         </div>
       </li>
       <li>
-        <label for="menu-4">Menu-4</label>
-        <input type="checkbox" id="menu-4" name="menu-4" class="menu-checkbox">
+        <label for="tienda">Tienda</label>
+        <input type="checkbox" id="tienda" name="tienda" class="menu-checkbox">
         <div class="menu">
-          <label class="menu-toggle" for="menu-4"><span>Toggle</span></label>
+          <label class="menu-toggle" for="tienda"><span>Toggle</span></label>
           <ul>
             <li>
-              <a href="#">Menu-4-1</a>
+              <a href="#">Añadir articulo</a>
             </li>
             <li>
-              <a href="#">Menu-4-2</a>
+              <a href="#">Modificar Articulo</a>
             </li>
             <li>
-              <a href="#">Menu-4-3</a>
+              <a href="#">Borrar Articulo</a>
             </li>
             <li>
               <a href="#">Menu-4-4</a>

@@ -1,64 +1,58 @@
 <template>
-  <div class="card" style="width:400px;">
-    <div class="card-image">
-      <figure class="image">
-        <img src="~/assets/primer_equipo/images/jugador.jpg" alt="Jugador" />
-      </figure>
-    </div>
-    <div class="card-content">
-      <div class="media">
-        <div class="media-content">
-          <p class="title is-4 restaurant-name">
-            {{ name }}
-          </p>
-          <div class="columns">
-            <div class="column">
-              <span class="is-category tag">
-                {{ category }}
-              </span>
-            </div>
-            <div class="column has-text-right">
-              <button class="button is-info" v-on:click="sumLikes">
-                {{ likes }}
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="content">
-        {{ description}}
-        <a v-bind:href="slug">more info</a>.
-      </div>
+  <div>
+    <div class="container">
+      <section class="section">
+        <div class="columns is-multiline">
+          <tarjeta-jugador
+                  :name="jugador.name"
+                  :comentario="jugador.comentario"
+                  :posicion="jugador.posicion"
+                  :peso="jugador.peso"
+                  :clave="jugador.clave"
+                  :image="jugador.image"
+                  :lugar_nacimiento="jugador.lugar_nacimiento"
+                  :fecha_nacimiento="jugador.fecha_nacimiento"
+                  :altura="jugador.altura"
+                  v-for="(jugador, index) in jugadores"
+                  :key="index"
+                  class="jugador-card"
+           />
+       </div>
+      </section>
     </div>
   </div>
 </template>
 
 <script>
+import tarjeta_jugador from '@/components/index/tarjeta_jugador'
 import { db } from '~/plugins/firebase'
-
 export default {
+  created() {
+   const response = db.collection('primer_equipo_jugadores').get()
+  response.then(snapshot => {
+      snapshot.forEach((doc) => {
+        const jugador = {
+          id: doc.id,
+          ...doc.data()
+        }
+        this.jugadores.push(jugador)
+      })
+    }).catch( error => {
+        console.log(error)
+      })
+  },
 
-  data() {
-    return {
-      name: 'Cristiano Ronaldo',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.Phasellus neciaculis mauris.',
-      likes: 0,
-      category: 'Delantero',
-      slug: 'restaurant-name'
+  data(){
+    return{
+      jugadores: []
     }
   },
-  methods: {
-    sumLikes() {
-      // this.likes = this.likes + 1
-      this.likes++
-    }
+
+  components: {
+   tarjeta_jugador
   }
 }
 </script>
 
-<style scoped>
-.restaurant-name {
-  font-size: 30px;
-  color: #8ae6ff;
-}
+<style>
 </style>

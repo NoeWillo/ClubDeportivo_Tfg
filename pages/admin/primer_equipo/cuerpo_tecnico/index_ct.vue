@@ -3,7 +3,7 @@
     <section class="section" >
       <div class="columns">
         <div class="column">
-          <h2 class="title is-2">Jugadores</h2>
+          <h2 class="title is-2">Cuerpo Técnico</h2>
         </div>
       </div>
       <div class="table-container">
@@ -11,12 +11,12 @@
           <thead>
             <tr>
               <th>Id</th>
-              <th>Nombre del jugador</th>
+              <th>Nombre del persona</th>
               <th>Actions</th>
             </tr>
           </thead>
           <tbody>
-            <tr v-for="(item, index) in jugadores" :key="index">
+            <tr v-for="(item, index) in ct" :key="index">
               <td>{{ item.id }}</td>
               <td>{{ item.name }}</td>
               <td>
@@ -40,7 +40,7 @@ import { db } from '~/plugins/firebase'
 export default {
     data() {
         return {
-        jugadores: []
+        ct: []
         }
     },
 
@@ -50,15 +50,15 @@ export default {
 
     methods: {
       getDocuments(){
-        this.jugadores = []
-        const response = db.collection('primer_equipo_jugadores').get()
+        this.ct = []
+        const response = db.collection('primer_equipo_ct').get()
           response.then((snapshot) => {
               snapshot.forEach((doc) => {
-                  const jugador = { 
+                  const persona = { 
                       id:doc.id,
                       ...doc.data()
                   }
-                  this.jugadores.push(jugador)
+                  this.ct.push(persona)
                   })
               })
               .catch((error) => {
@@ -67,7 +67,7 @@ export default {
       },
 
       deleteDocument(id){
-        const reference = db.collection('primer_equipo_jugadores').doc(id)
+        const reference = db.collection('primer_equipo_ct').doc(id)
           reference.delete()
           this.getDocuments()
       }
