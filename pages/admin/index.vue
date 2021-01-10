@@ -63,51 +63,127 @@
           </ul>
         </div>
       </li>
+      <li>      
+        <label for="cantera">Cantera</label>
+        <input type="checkbox" id="cantera" name="cantera" class="menu-checkbox">
+        <div class="menu">
+          <label class="menu-toggle" for="cantera"><span>Toggle</span></label>
+          <ul>
+            <li>
+              <label for="infantilA">Infantil A</label>
+              <input type="checkbox" id="infantilA" name="infantilA" class="menu-checkbox">
+              <div class="menu">
+                <label class="menu-toggle" for="infantilA"><span>Toggle</span></label>
+                <ul>
+                  <li>
+                    <a href="/admin/cantera/infantilA/crear_jugador">Añadir Jugador</a>
+                  </li>
+                  <li>
+                    <a href="/admin/cantera/infantilA/index_jugadores">Modificar Jugador</a>
+                  </li>
+                   <li>
+                    <a href="/admin/cantera/infantilA/index_jugadores">Borrar Jugador</a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <label for="cadeteB">Cadete B</label>
+              <input type="checkbox" id="cadeteB" name="cadeteB" class="menu-checkbox">
+              <div class="menu">
+                <label class="menu-toggle" for="cadeteB"><span>Toggle</span></label>
+                <ul>
+                  <li>
+                    <a href="/admin/cantera/cadeteB/crear_jugador">Añadir Jugador</a>
+                  </li>
+                  <li>
+                    <a href="/admin/cantera/cadeteB/index_jugadores">Modificar Jugador</a>
+                  </li>
+                   <li>
+                    <a href="/admin/cantera/cadeteB/index_jugadores">Borrar Jugador</a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <label for="juvenilC">Juvenil C</label>
+              <input type="checkbox" id="juvenilC" name="juvenilC" class="menu-checkbox">
+              <div class="menu">
+                <label class="menu-toggle" for="juvenilC"><span>Toggle</span></label>
+                <ul>
+                  <li>
+                    <a href="/admin/cantera/juvenilC/crear_jugador">Añadir Jugador</a>
+                  </li>
+                  <li>
+                    <a href="/admin/cantera/juvenilC/index_jugadores">Modificar Jugador</a>
+                  </li>
+                   <li>
+                    <a href="/admin/cantera/juvenilC/index_jugadores">Borrar Jugador</a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </li>
       <li>
+        <label for="patrocinadores">Patrocinadores</label>
+        <input type="checkbox" id="patrocinadores" name="patrocinadores" class="menu-checkbox">
+        <div class="menu">
+          <label class="menu-toggle" for="patrocinadores"><span>Toggle</span></label>
+          <ul>
+            <li>
+              <a href="/admin/patrocinadores/crear_patrocinador">Añadir Patrocinador</a>
+            </li>
+            <li>
+              <a href="/admin/patrocinadores/index_patrocinadores">Modificar Patrocinador</a>
+            </li>
+            <li>
+              <a href="/admin/patrocinadores/index_patrocinadores">Borrar Patrocinador</a>
+            </li>
+          </ul>
+        </div>
+      </li>       
+      <li>
+        <label for="noticias">Noticias</label>
+        <input type="checkbox" id="noticias" name="noticias" class="menu-checkbox">
+        <div class="menu">
+          <label class="menu-toggle" for="noticias"><span>Toggle</span></label>
+          <ul>
+            <li>
+              <a href="/admin/noticias/crear_noticia">Añadir Noticia</a>
+            </li>
+            <li>
+              <a href="/admin/noticias/index_noticias">Modificar Noticia</a>
+            </li>
+            <li>
+              <a href="/admin/noticias/index_noticias">Borrar Notcia</a>
+            </li>
+          </ul>
+        </div>
+      </li>
+       <li>
         <label for="tienda">Tienda</label>
         <input type="checkbox" id="tienda" name="tienda" class="menu-checkbox">
         <div class="menu">
           <label class="menu-toggle" for="tienda"><span>Toggle</span></label>
           <ul>
             <li>
-              <a href="#">Añadir articulo</a>
+              <a href="/admin/tienda/crear_item">Añadir articulo</a>
             </li>
             <li>
-              <a href="#">Modificar Articulo</a>
+              <a href="/admin/tienda/index_tienda">Modificar Articulo</a>
             </li>
             <li>
-              <a href="#">Borrar Articulo</a>
-            </li>
-            <li>
-              <a href="#">Menu-4-4</a>
+              <a href="/admin/tienda/index_tienda">Borrar Articulo</a>
             </li>
           </ul>
         </div>
-      </li>      
-      <li>
-        <label for="menu-5">Menu-5</label>
-        <input type="checkbox" id="menu-5" name="menu-5" class="menu-checkbox">
-        <div class="menu">
-          <label class="menu-toggle" for="menu-5"><span>Toggle</span></label>
-          <ul>
-            <li>
-              <a href="#">Menu-5-1</a>
-            </li>
-            <li>
-              <a href="#">Menu-5-2</a>
-            </li>
-            <li>
-              <a href="#">Menu-5-3</a>
-            </li>
-            <li>  
-              <a href="#">Menu-5-4</a>
-            </li>
-          </ul>
-        </div>
-      </li>
-      <li>
-        <a href="#">Menu-6</a>
-      </li>
+      </li>       
     </ul>
   </div>
 </div>

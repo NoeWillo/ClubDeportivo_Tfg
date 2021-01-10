@@ -38,18 +38,32 @@
                   </b-navbar-item>
             </b-navbar-dropdown>
             <b-navbar-dropdown label="Cantera">
-                  <b-navbar-item href="/cantera">
-                      Cantera
+                  <b-navbar-item href="/cantera/infantilA">
+                      InfantilA
+                  </b-navbar-item>
+                   <b-navbar-item href="/cantera/cadeteB">
+                      CadeteB
+                  </b-navbar-item>
+                   <b-navbar-item href="/cantera/juvenilC">
+                      JuvenilC
                   </b-navbar-item>
             </b-navbar-dropdown>
-            <b-navbar-dropdown label="Admin">
-                <b-navbar-item href="/admin">
-                    Admin
+            <b-navbar-dropdown label="Info">
+                <b-navbar-item href="/proteccion_datos">
+                    Protección Datos
                 </b-navbar-item>
                 <b-navbar-item href="/contacto">
                     Contacto
                 </b-navbar-item>
             </b-navbar-dropdown>
+            <b-navbar-dropdown label="Admin">
+                <b-navbar-item href="/admin">
+                    Panel de Administración
+                </b-navbar-item>
+            </b-navbar-dropdown>
+            <b-navbar-item href="/tienda">
+                Tienda
+            </b-navbar-item>
         </template>
 
         <template slot="end">

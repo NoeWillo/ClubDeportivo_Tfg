@@ -1,5 +1,5 @@
 <template>
-  <div class="section">
+  <div class="section" v-if="noticia">
     <div class="columns">
       <div class="column is-6 is-offset-3">
         <div class="columns">
@@ -90,38 +90,27 @@ import { db } from '~/plugins/firebase'
 export default {
   data() {
     return {
-      noticia: {
-        titulo: null,
-        fecha: null,
-        descripcion: null,
-        clave:null,
-        image:null
+      noticia: null
+    }
+  },
+  created() {
+    const response = db.collection('noticias').doc(this.$route.params.id).get()
+    response.then(doc => {
+      if(doc.exists) {
+        this.noticia = doc.data()
       }
-    }
+    })
   },
-  watch: {
-    clave() {
-      this.noticia.clave = this.clave
-    }
-  },
-  computed: {
-    clave() {
-      if (this.noticia.name) {
-        return this.noticia.name.replace(/ /g, '-')
-      } else {
-        return null
-      }
-    }
-  },
-  methods: {
-    onSubmitButton() {
-      const response = db.collection('noticias').add(this.noticia)
-        response.then(() => {
-         this.$router.back()
-        })
+  methods:{
+    onUpdateButton() {
+      const reference = db.collection('noticias').doc(this.$route.params.id)
+        const response = reference.update(this.noticia)
+          response.then(() => {
+            this.$router.back()
+          }).catch(error => {
+            console.log(error)
+          })
     }
   }
 }
 </script>
-
-<style lang="scss" scoped></style>

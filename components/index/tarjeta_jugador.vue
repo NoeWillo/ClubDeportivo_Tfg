@@ -81,6 +81,9 @@ export default {
 <style>
 .jugador-name {
   font-size: 30px;
-  color: #8ae6ff;
+  color: #4229b3;
+}
+.card{
+    margin: 10px 10px;
 }
 </style>

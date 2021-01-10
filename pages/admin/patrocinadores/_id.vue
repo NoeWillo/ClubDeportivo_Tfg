@@ -1,22 +1,22 @@
 <template>
-  <div class="section">
+  <div class="section" v-if="patrocinador">
     <div class="columns">
       <div class="column is-6 is-offset-3">
         <div class="columns">
           <div class="column">
-            <h2 class="title is-2">Nueva Noticia</h2>
+            <h2 class="title is-2">Nuevo Patrocinador</h2>
           </div>
         </div>
         <div class="columns box">
           <div class="column">
             <div class="field">
-              <label class="label">Titulo</label>
+              <label class="label">Nombre</label>
               <div class="control">
                 <input
                   class="input"
                   type="text"
-                  v-model="noticia.titulo"
-                  placeholder="titulo de la noticia"
+                  v-model="patrocinador.name"
+                  placeholder="Nombre del patrocinador"
                 />
               </div>
             </div>
@@ -30,21 +30,21 @@
               <label class="label">Imagen</label>
               <div class="control">
                 <input
-                  v-model="noticia.image"
+                  v-model="patrocinador.image"
                   class="input"
                   type="text"
-                  placeholder="Imagen del noticia"
+                  placeholder="Imagen del patrocinador"
                 />
               </div>
             </div>
             <div class="field">
-              <label class="label">Fecha</label>
+              <label class="label">Url del patrocinador</label>
               <div class="control">
                 <input
-                  v-model="noticia.fecha"
+                  v-model="patrocinador.url"
                   class="input"
-                  type="date"
-                  placeholder="Fecha de la noticia"
+                  type="url"
+                  placeholder="Fecha del Patrocinador"
                 />
               </div>
             </div>
@@ -52,11 +52,11 @@
               <label class="label">Descripcion</label>
               <div class="control">
                 <textarea
-                  v-model="noticia.descripcion"
+                  v-model="patrocinador.descripcion"
                   class="textarea"
                   type="textarea"
                   rows="10"
-                  placeholder="Descripcion del noticia"
+                  placeholder="Descripcion del patrocinador"
                 />
               </div>
             </div>
@@ -90,38 +90,27 @@ import { db } from '~/plugins/firebase'
 export default {
   data() {
     return {
-      noticia: {
-        titulo: null,
-        fecha: null,
-        descripcion: null,
-        clave:null,
-        image:null
+      patrocinador: null
+    }
+  },
+  created() {
+    const response = db.collection('patrocinadores').doc(this.$route.params.id).get()
+    response.then(doc => {
+      if(doc.exists) {
+        this.patrocinador = doc.data()
       }
-    }
+    })
   },
-  watch: {
-    clave() {
-      this.noticia.clave = this.clave
-    }
-  },
-  computed: {
-    clave() {
-      if (this.noticia.name) {
-        return this.noticia.name.replace(/ /g, '-')
-      } else {
-        return null
-      }
-    }
-  },
-  methods: {
-    onSubmitButton() {
-      const response = db.collection('noticias').add(this.noticia)
-        response.then(() => {
-         this.$router.back()
-        })
+  methods:{
+    onUpdateButton() {
+      const reference = db.collection('patrocinadores').doc(this.$route.params.id)
+        const response = reference.update(this.patrocinador)
+          response.then(() => {
+            this.$router.back()
+          }).catch(error => {
+            console.log(error)
+          })
     }
   }
 }
 </script>
-
-<style lang="scss" scoped></style>
