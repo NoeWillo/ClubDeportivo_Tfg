@@ -24,7 +24,7 @@
 </template>
 
 <script>
-import tarjeta_jugador from '@/components/index/tarjeta_jugador'
+import tarjeta_jugador from '@/components/tarjetas/tarjeta_jugador'
 import { db } from '~/plugins/firebase'
 export default {
   created() {
