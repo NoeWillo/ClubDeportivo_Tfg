@@ -8,9 +8,14 @@ export default {
       { hid: 'description', name: 'description', content: '' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      {rel: 'stylesheet', href:'/jquery-3.5.1.min.js'}
     ]
   },
+
+  script:[
+    {src:'jquery-3.5.1.min.js'}
+  ],
 
   // Global CSS (https://go.nuxtjs.dev/config-css)
   css: [
