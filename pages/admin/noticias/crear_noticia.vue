@@ -61,6 +61,28 @@
               </div>
             </div>
             <div class="field">
+              <label class="label">Autor</label>
+              <div class="control">
+                <input
+                  v-model="noticia.autor"
+                  class="input"
+                  type="text"
+                  placeholder="Autor de la noticia"
+                />
+              </div>
+            </div>
+            <div class="field">
+              <label class="label">Categoría</label>
+              <div class="control">
+                <input
+                  v-model="noticia.categoria"
+                  class="input"
+                  type="text"
+                  placeholder="Categoría de la imagen"
+                />
+              </div>
+            </div>
+            <div class="field">
               <div class="control has-text-centered">
                 <button
                   class="button is-danger"
@@ -95,7 +117,9 @@ export default {
         fecha: null,
         descripcion: null,
         clave:null,
-        image:null
+        image:null,
+        autor:null,
+        categoria:null
       }
     }
   },

@@ -1,94 +1,103 @@
 <template>
- <div class="box">
-    <article class="media">
-      <div class="media-left">
-        <figure class="image is-64x64">
-          <img src="https://bulma.io/images/placeholders/128x128.png" alt="Image">
-        </figure>
-      </div>
-      <div class="media-content">
-        <div class="content">
-          <p>
-            <strong>John Smith</strong> <small>@johnsmith</small> <small>31m</small>
-            <br>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean efficitur sit amet massa fringilla egestas. Nullam condimentum luctus turpis.
-          </p>
-        </div>
-        <nav class="level is-mobile">
-          <div class="level-left">
-            <a class="level-item" aria-label="reply">
-              <span class="icon is-small">
-                <i class="fas fa-reply" aria-hidden="true"></i>
-              </span>
-            </a>
-            <a class="level-item" aria-label="retweet">
-              <span class="icon is-small">
-                <i class="fas fa-retweet" aria-hidden="true"></i>
-              </span>
-            </a>
-            <a class="level-item" aria-label="like">
-              <span class="icon is-small">
-                <i class="fas fa-heart" aria-hidden="true"></i>
-              </span>
-            </a>
-          </div>
-        </nav>
-      </div>
-    </article>
-    <div style="margin-top:100px; margin-left:100px">
-          <section>
-        <div class="buttons">
-            <button class="button is-primary"
-                @click="isCardModalActive = true">
-                Launch card modal (keep scroll)
-            </button>
-        </div>
-        <b-modal v-model="isCardModalActive" :width="800" scroll="keep">
-            <div class="card">
-                <div class="card-image">
-                    <figure class="image is-4by3">
-                        <img src="/static/img/placeholder-1280x960.png" alt="Image">
-                    </figure>
-                </div>
-                <div class="card-content">
-                    <div class="media">
-                        <div class="media-left">
-                            <figure class="image is-48x48">
-                                <img src="/static/img/placeholder-1280x960.png" alt="Image">
-                            </figure>
-                        </div>
-                        <div class="media-content">
-                            <p class="title is-4">John Smith</p>
-                            <p class="subtitle is-6">@johnsmith</p>
-                        </div>
-                    </div>
+   <div class="container">
+      <div class="section">
+        <div class="card is-horizontal columns">
+          <div class="card-image column is-three-fifths">
 
-                    <div class="content">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Phasellus nec iaculis mauris. <a>@bulmaio</a>.
-                        <a>#css</a> <a>#responsive</a>
-                        <br>
-                        <small>11:09 PM - 1 Jan 2016</small>
+            <figure class="image is-4by3">
+              <img :src="image" alt="noticia.jpg">             
+            </figure>
+          </div>
+          <div class="card-content column is-two-fifths">
+            <div class="media">
+              <div class="media-content">
+                <p class="title is-4">{{titulo}}</p>
+                <p class="subtitle is-6">{{autor}}</p>
+              </div>
+            </div>
+
+            <div class="content">
+              {{descripcion}}
+              <span class="tag is-link">{{categoria}}</span>
+
+              <br><br>
+
+                <div class="field is-grouped is-grouped-multiline">
+                  <div class="control">
+                    <div class="tags has-addons">
+                      <span class="tag is-info">{{fecha}}</span>
                     </div>
+                  </div>
+                  <br>
+                </div>
                 </div>
             </div>
-        </b-modal>
-    </section>
-      </div>
-            <a href="/">
-                <button class="button is-danger">Index</button>
-            </a>
+          </div>
+        </div>
   </div>
-    
 </template>
-
 <script>
     export default {
-        data() {
-            return {
-                isImageModalActive: false,
-                isCardModalActive: false
-            }
-        }
+      props:{
+        titulo:{
+          type: String,
+          default:''
+        },
+        autor:{
+          type: String,
+          default:''
+        },
+        image:{
+          type: String,
+          default:''
+        },
+        descripcion:{
+          type: String,
+          default:''
+        },
+        fecha:{
+          type: String,
+          default:''
+        },
+        categoria:{
+          type: String,
+          default:''
+        },
+
+      }
     }
 </script>
+
+<style>
+.card .media:not(:last-child) {
+  margin-bottom: 0.75rem;
+}
+.card.card--reverse-order {
+  flex-direction: row-reverse;
+}
+.card.is-horizontal {
+  display: flex;
+  flex-basis: 50ex;
+  flex-grow: 0;
+  flex-shrink: 1;
+}
+.card.is-horizontal .card-image {
+  flex: 4;
+  flex-shrink: 1;
+}
+.card.is-horizontal .card-image .image {
+  display: block;
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+}
+.card.is-horizontal .card-image .image img {
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+.card.is-horizontal .card-content {
+  flex: 3;
+}
+</style>
