@@ -1,7 +1,7 @@
 <template>
     <div>
         <navbar/>
-        <h1>Soy contacto</h1>
+        <h1>Soy proteccion_datos</h1>
         <pie/>
     </div>
 </template>

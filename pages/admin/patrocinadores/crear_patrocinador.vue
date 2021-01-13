@@ -49,6 +49,39 @@
               </div>
             </div>
             <div class="field">
+              <label class="label">URL de Instagram del patrocinador</label>
+              <div class="control">
+                <input
+                  v-model="patrocinador.instagram"
+                  class="input"
+                  type="url"
+                  placeholder="URL de Instagram del patrocinador"
+                />
+              </div>
+            </div>
+            <div class="field">
+              <label class="label">URL del Facebook del patrocinador</label>
+              <div class="control">
+                <input
+                  v-model="patrocinador.facebook"
+                  class="input"
+                  type="url"
+                  placeholder="URL del Facebook del patrocinador"
+                />
+              </div>
+            </div>
+            <div class="field">
+              <label class="label">URL del Twitter del patrocinador</label>
+              <div class="control">
+                <input
+                  v-model="patrocinador.twitter"
+                  class="input"
+                  type="url"
+                  placeholder="URL del Twitter del patrocinador"
+                />
+              </div>
+            </div>
+            <div class="field">
               <label class="label">Descripcion</label>
               <div class="control">
                 <textarea
@@ -95,7 +128,10 @@ export default {
         url: null,
         descripcion: null,
         clave:null,
-        image:null
+        image:null,
+        instagram:null,
+        facebook:null,
+        twitter:null
       }
     }
   },

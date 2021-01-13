@@ -1,8 +1,7 @@
 <template>
   <div>
-    <div class="container">
-      <section class="section">
-        <div class="columns is-multiline">
+    <div>
+     <div class="cardss">
           <tarjeta-jugador
                   :name="jugador.name"
                   :comentario="jugador.comentario"
@@ -15,17 +14,19 @@
                   :altura="jugador.altura"
                   v-for="(jugador, index) in jugadores"
                   :key="index"
-                  class="jugador-card"
            />
-       </div>
-      </section>
-    </div>
+     </div>
+     </div>
+     <pie></pie>
   </div>
 </template>
 
 <script>
-import tarjeta_jugador from '@/components/tarjetas/tarjeta_jugador'
+import tarjeta_jugador from '@/components/tarjetas/tarjeta_jugador.vue'
+
 import { db } from '~/plugins/firebase'
+import pie from '~/components/generales/pie.vue'
+
 export default {
   created() {
    const response = db.collection('primer_equipo_jugadores').get()
@@ -49,7 +50,8 @@ export default {
   },
 
   components: {
-   tarjeta_jugador
+   tarjeta_jugador,
+    pie
   }
 }
 </script>

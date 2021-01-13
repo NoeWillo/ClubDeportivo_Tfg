@@ -1,18 +1,298 @@
 <template>
-    <div>
-      <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
-     
-    </div>
+   <div class="card">
+     <img class="card_img" :src="image" alt="patrocinador.jpg">
+          <div class="plus"><p>+</p></div>
+     <h3>{{name}}</h3>
+     <div class="line">
+     </div>
+     <p> {{descripcion}}  </p>
+     <div class="footer">
+     <div class="social_media">
+                <ul>
+                    <li><a class="facebook" :href="facebook"><i class="fab fa-facebook-f"></i></a></li>
+                    <li><a class="twitter" :href="twitter"><i class="fab fa-twitter"></i></a></li>
+                    <li><a class="instagram" :href="instagram"><i class="fab fa-instagram"></i></a></li>
+                </ul>
+        </div>
+     </div>
+     </div>
 </template>
 
 <script>
-import tarjeta_patrocinador from '~/funciones/funciones'
 export default {
-    created(){
+    props:{
+        name:{
+            type: String,
+            default: ''
+        },
+        image:{
+            type: String,
+            default: ''
+        },
+        descripcion:{
+            type: String,
+            default:''
+        },
+        url:{
+            type: URL,
+            default:''
+        },
+        instagram:{
+            type: URL,
+            default:''
+        },
+        twitter:{
+            type: URL,
+            default:''
+        },
+        facebook:{
+            type: URL,
+            default:''
+        },
     }
 }
 </script>
 
 <style>
-</style>>
+@import url('https://fonts.googleapis.com/css?family=Lato');
 
+
+*{
+  margin: 0px;
+}
+
+.viewport{
+  position:relative;
+  background: linear-gradient(90deg, #20e6b3, #8e11f3, #4c20d4);
+  background-size: 200% 200%;
+  height: auto;
+  width:100%;
+  -webkit-animation:   AnimationName 10s ease infinite;
+-moz-animation: AnimationName 10s ease infinite;
+animation: AnimationName 10s ease infinite;
+  
+}
+
+@-webkit-keyframes AnimationName {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@-moz-keyframes AnimationName {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@keyframes AnimationName { 
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+
+.card p{
+  font-family: lato;
+  margin:0px;
+  color: black;
+  font-weight: 400;
+  font-size:15px;
+  line-height:90%;
+  padding-left: 8%;
+  padding-right: 8%;
+  padding-top:3%;
+  padding-bottom:8%;
+  border-radius:20px;
+  cursor:pointer;
+  transition: ease 1s;
+  -webkit-transition: ease 1s;
+}
+
+.card h3{
+  font-family: lato;
+  margin:0px;
+  color: black;
+  font-weight: 400;
+  font-size:20px;
+  line-height:90%;
+  padding-left: 8%;
+  padding-top:8%;
+  padding-bottom:3%;
+  border-radius:20px;
+  cursor:pointer;
+  transition: ease 1s;
+  -webkit-transition: ease 1s;
+}
+
+h1{
+  font-family: lato;
+  color:white;
+  font-weight: 400;
+  font-size:35px;
+  line-height:90%;
+  padding-bottom:140px;
+  padding-top:150px;
+  position:relative;
+  text-align:center;
+  
+}
+
+.title{
+  width:78%;
+  margin:auto;
+  padding-left:0px;
+  padding-bottm:0px;
+}
+
+.cards{
+  width:80%;
+  position:relative;
+  margin-left:auto;
+  margin-right:auto;
+  padding-bottom:200px;
+  display:flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  
+}
+
+.card{
+  width:22%;
+  position:relative;
+  background-color:white;
+  margin:1.13%;
+  border-radius:5px;
+  transition: 1s;
+  -webkit-transition:0.5s;
+  cursor:pointer;
+    flex: 1 1 auto;
+}
+
+.card:hover{
+  transform: scale(1.05);
+  box-shadow: 10px 10px 15px rgba(0,0,0,0.3);
+}
+
+@media screen and (max-width: 1200px){
+  .card{
+  width:30%;
+  margin:1.6%;
+  }
+}
+
+@media screen and (max-width: 800px){
+  .card{
+  width:45%;
+  margin:2.5%;
+  }
+}
+
+@media screen and (max-width: 500px){
+  .card{
+  width:98%;
+  margin:2%;
+  }
+}
+
+.card_img{
+  width:100%;
+  height:150px;
+  position:reltive;
+  border-radius: 5px 5px 0px 0px;
+  background-size: cover;
+  background-position:center center; 
+  background-color: #20e6b3;
+  transition:1s;
+  -webkit-transition:1s;
+}
+
+
+.line{
+  height:2px;
+  width:84%;
+  margin:auto;
+  background-color: #8e11f3;
+}
+
+.title input{
+  background: transparent;
+  border:1px solid white;
+  padding-top:10px;
+  padding-bottom:10px;
+  padding-left:20px;
+  display:inline;
+  font-family: lato;
+  color: white;
+  font-size:18px;
+  line-height:90%;
+  border-radius:30px;
+  width:150px;
+  float:right;
+  margin-top:30px;
+}
+
+.title textarea:focus, input:focus{
+    outline: none;
+}
+
+.plus{
+  width:20px;
+  height:20px;
+  background: transparent;
+  border-radius: 50%;
+  position: absolute;
+  border: 2px solid white;
+  top:10px;
+  right:10px;
+  transition: 1s;
+  -webkit-transition: 1s;
+}
+
+.plus:hover{
+  transform: scale(1.1) rotate(90deg);
+}
+
+.plus p{
+  padding: 0px !important;
+  display:inline;
+  margin:0px;
+  line-height:50%;
+  left:50%;
+  top:45.3%;
+  transform:translate(-50%,-50%);
+  position:absolute;
+  color: white;
+}
+
+.zoomed{
+  width:100%;
+}
+
+.footer .social_media ul li a:hover{
+  color: #fff;
+}
+
+.footer .social_media ul li a.facebook:hover{
+  background: #3b5998; 
+}
+
+.footer .social_media ul li a.twitter:hover{
+  background: #1da1f2; 
+}
+
+.footer .social_media ul li a.instagram:hover{
+  background: #c32aa3; 
+}
+
+.footer .social_media ul li a.whatsapp:hover{
+  background: #25d366; 
+}
+
+.footer .social_media{
+  color: #adadad;
+}
+
+.footer{
+    background: #363333;
+    padding: 50px;
+    font-family: "Montserrat", sans-serif;
+}
+</style>

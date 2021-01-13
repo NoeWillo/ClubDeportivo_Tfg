@@ -1,38 +1,15 @@
 <template>
-  <div class="card" style="width:400px;">
-    <div class="card-image">
-      <figure class="image">
-        <img :src="image" alt="jugador.jpg" />
-      </figure>
-    </div>
-    <div class="card-content">
-      <div class="media">
-        <div class="media-content">
-          <p class="title is-4 jugador-name">
-            {{ name }}
-          </p>
-          <div class="columns">
-            <div class="column">
-              <a :href="posicion">
-                <span class="is-category tag">
-                  {{ posicion }}
-                </span>
-              </a>
-            </div>
-            <div class="column has-text-right">
-              <button class="button is-info" v-on:click="sumLikes">
-                0
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="content">
-        {{ comentario }}
-        <nuxt-link :to="category + '/' + slug">more info</nuxt-link>.
-      </div>
+  <div>
+  <div class="cardd">
+    <img class="pic" :src="image">
+    <div class="ttl">
+      <h2 class="h22">{{name}}</h2>
+      <h3 class="h33">{{posicion}}</h3>
+      <p class="subtitle">{{comentario}}</p>
+      <a href="#" class="btn">Mas</a>
     </div>
   </div>
+</div>
 </template>
 
 <script>
@@ -79,11 +56,170 @@ export default {
 </script>
 
 <style>
-.jugador-name {
-  font-size: 30px;
-  color: #4229b3;
+
+.cardss {
+  display: grid;
+  grid-template-columns: auto auto auto; 
+  max-width: 1170px;
+  margin: 0 auto;
+  grid-gap: 9px;
+  align-items: center;
+  width: 100%;
+  margin-top: 50px;
+  margin-bottom: 30px;
 }
-.card{
-    margin: 10px 10px;
+.cardd {
+  max-width: 100%;
+  height: 450px;
+  overflow: hidden;
+  border-radius: 12px;
+  position: relative;
+  box-shadow: 0 0 9px #eee;
+  transition: all ease .6s;
+}
+
+.pic {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+  background-position: center center;
+  background-size: cover;
+}
+.pic img:hover {
+  transform: scale(1.2);
+}
+.pic img {
+  width: 100%;
+}
+.ttl {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: flex-end;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  margin-bottom: -36px;
+  text-align: center;
+  transition: all ease .3s;
+  transform: trasnlateX(12px);
+  z-index: 3;
+}
+.ttl:after {
+  content: '';
+  background: linear-gradient(to top, black, transparent);  
+  top:0;right:0;bottom:0;left:0;
+  position: absolute;
+  z-index: -1;
+  margin-bottom: -27px;
+}
+.ttl:hover {
+  transform: translateY(-12px);
+}
+
+.ttl .h22 {
+  font-size: 21px;
+  color: orange;
+  font-weight: bold;
+  text-transform: uppercase;
+  position: relative;
+}
+.ttl .h22:after {
+  content: '';
+  width: 27px;
+  border-top: 3px solid #fff;
+  display: block;
+  margin: 0 auto;
+  margin-top: 21px;
+}
+.ttl .h33 {
+  font-size: 16px;
+  color: rgb(170, 46, 46);
+  font-weight: bold;
+  text-transform: uppercase;
+  position: relative;
+  margin-top: 21px;
+}
+.ttl .h33:after {
+  content: '';
+  width: 22px;
+  border-top: 3px solid #fff;
+  display: block;
+  margin: 0 auto;
+  margin-top: 21px;
+}
+
+.ttl .subtitle, a {
+  width: 60%;
+  margin: 0 auto;
+  line-height: 22px;
+  margin-bottom: 24px;
+  color: #fff;
+  transition-delay: 0.5s;
+  margin-top: 21px;
+}
+
+.ttl .btn {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 auto 36px auto;
+  width: 72px;
+  height: 36px;
+  line-height: 36px;
+  border-radius: 27px;
+  border: 1px solid #fff; 
+  display: block;
+  overflow: hidden;
+  transition: all ease .3s;
+}
+.ttl .btn:hover {
+  width: 81px;
+  background: rgba(255,165,0,0.36);
+}
+
+@media (min-width: 0) and (max-width: 575px) {
+  .cardss {
+    grid-template-columns: 100%;
+  }
+  .cardd {
+    max-width: 100%;
+  }
+}
+@media (min-width: 576px) and (max-width: 767px) {
+  .cardss {
+    grid-template-columns: auto auto auto;
+  }
+  .cardd:nth-child(1) {
+    grid-column: 1 / 3;
+  }
+  .cardd:nth-child(2) {
+    grid-column: 3 / 5;
+  }
+  .cardd:nth-child(3) {
+    grid-column: 1 / 5;
+  }  
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .cardd:nth-child(1) {
+    grid-column: 1 / 3;
+  }
+  .cardd:nth-child(2) {
+    grid-column: 3 / 4;
+  }
+  .cardd:nth-child(3) {
+    grid-column: 1 / 4;
+  }  
+}
+@media (min-width: 576px) and (max-width: 991px) {
+  .cardss {
+    grid-template-columns: auto auto;
+  }
+  .cardd {
+    max-width: 100%;
+  }
 }
 </style>

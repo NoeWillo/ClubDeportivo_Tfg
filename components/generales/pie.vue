@@ -1,7 +1,7 @@
 <template>
 <div>
-  <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
      <div class="footer">
+         <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
         <div class="footer_menu">
            <div class="col_1">
               <div class="title">
