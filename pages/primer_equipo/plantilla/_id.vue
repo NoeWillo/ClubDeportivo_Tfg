@@ -8,33 +8,23 @@
         <p>{{jugador.posicion}}</p>
     </header>
     <section>
-        <h2>Run Section</h2>
+        <h2>Atributos</h2>
         <ul class="list horizontal">
-            <li>9.1</li>
-            <li>8.9</li>
+            <li>Peso: {{jugador.peso}}</li>
+            <li>Altura: {{jugador.altura}}</li>
         </ul>
     </section>
     <section>
-        <h2>Best Trick Attempt 5 Of 5</h2>
+        <h2>Lugar y fecha de nacimiento</h2>
         <ul class="list horizontal">
-            <li>8.4</li>
-            <li>8.9</li>
-            <li>0</li>
-            <li>9.5</li>
-            <li>-</li>
+            <li>{{jugador.lugar_nacimiento}}</li>
+            <li>{{jugador.fecha_nacimiento}}</li>
         </ul>
     </section>
     <section>
-        <h2>Scores</h2>
+        <h2>Equipo</h2>
         <ol class="list numbered">
-            <li>Oliveira <span>36.4</span></li>
-            <li>Huston <span>35.7</span></li>
-            <li>Hoefler <span>35.5</span></li>
-            <li>Decenzo <span>31.1</span></li>
-            <li>Ortiz <span>29.5</span></li>
-            <li>Berger <span>27.6</span></li>
-            <li>O'Neill <span>25.5</span></li>
-            <li>Rodriguez <span>15.7</span></li>
+            <li>{{jugador.equipo}}</li>
         </ol>
     </section>
 </aside>
@@ -108,11 +98,11 @@ ol {
 .list {
     display: flex;
     flex-direction: column;
-    
 }
 
 .list.horizontal {
     flex-direction: row;
+    
 }
 
 .list.numbered {

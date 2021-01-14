@@ -101,6 +101,19 @@
               </div>
             </div>
             <div class="field">
+              <label class="label">Equipo</label>
+              <div class="control">
+                <div class="select">
+                  <input
+                  v-model="ct.equipo"
+                  class="input"
+                  type="text"
+                  placeholder="Equipo actual"
+                />
+                </div>
+              </div>
+            </div>
+            <div class="field">
               <label class="label">Comentario</label>
               <div class="control">
                 <textarea
@@ -151,7 +164,8 @@ export default {
         lugar_nacimiento: null,
         fecha_nacimiento: null,
         peso: null,
-        altura: null
+        altura: null,
+        equipo:null
       }
     }
   },

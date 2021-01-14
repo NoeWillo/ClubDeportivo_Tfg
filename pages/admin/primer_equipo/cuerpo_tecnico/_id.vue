@@ -1,10 +1,10 @@
 <template>
-  <div class="section" v-if="ct">
+  <div class="section">
     <div class="columns">
       <div class="column is-6 is-offset-3">
         <div class="columns">
           <div class="column">
-            <h2 class="title is-2">Nuevo ct</h2>
+            <h2 class="title is-2">Nuevo Cuerpo Técnico</h2>
           </div>
         </div>
         <div class="columns box">
@@ -23,7 +23,7 @@
             <div class="field">
               <label class="label">Clave</label>
               <div class="control">
-                <input class="input" type="text" :placeholder="ct.clave" disabled />
+                <input class="input" type="text" :placeholder="clave" disabled />
               </div>
             </div>
             <div class="field">
@@ -84,16 +84,32 @@
               </div>
             </div>
             <div class="field">
-              <label class="label">Posicion</label>
+              <label class="label">Delegacion</label>
               <div class="control">
                 <div class="select">
-                  <select v-model="ct.posicion">
+                  <select v-model="ct.delegacion">
                     <option></option>
-                    <option value="Delantero">Delantero</option>
-                    <option value="Centrocampista">Centrocampista</option>
-                    <option value="Defensa">Defensa</option>
-                    <option value="Portero">Portero</option>
+                    <option value="Entrenador">Entrenador</option>
+                    <option value="2ºEntrenador">2ºEntrenador</option>
+                    <option value="3ºEntrenador">3ºEntrenador</option>
+                    <option value="Preparador Físico">Preparador Físico</option>
+                    <option value="Psicólogo">Psicólogo</option>
+                    <option value="Analista">Analista</option>
+                    <option value="Utillero">Utillero</option>
                   </select>
+                </div>
+              </div>
+            </div>
+            <div class="field">
+              <label class="label">Equipo</label>
+              <div class="control">
+                <div class="select">
+                  <input
+                  v-model="ct.equipo"
+                  class="input"
+                  type="text"
+                  placeholder="Equipo actual"
+                />
                 </div>
               </div>
             </div>

@@ -5,36 +5,26 @@
                 <aside class="player-card">
     <header>
         <h1>{{ct.name}}</h1>
-        <p>{{ct.delegacion}}</p>
+        <p>{{ct.posicion}}</p>
     </header>
     <section>
-        <h2>Run Section</h2>
+        <h2>Atributos</h2>
         <ul class="list horizontal">
-            <li>9.1</li>
-            <li>8.9</li>
+            <li>Peso: {{ct.peso}}</li>
+            <li>Altura: {{ct.altura}}</li>
         </ul>
     </section>
     <section>
-        <h2>Best Trick Attempt 5 Of 5</h2>
+        <h2>Lugar y fecha de nacimiento</h2>
         <ul class="list horizontal">
-            <li>8.4</li>
-            <li>8.9</li>
-            <li>0</li>
-            <li>9.5</li>
-            <li>-</li>
+            <li>{{ct.lugar_nacimiento}}</li>
+            <li>{{ct.fecha_nacimiento}}</li>
         </ul>
     </section>
     <section>
-        <h2>Scores</h2>
+        <h2>Equipo</h2>
         <ol class="list numbered">
-            <li>Oliveira <span>36.4</span></li>
-            <li>Huston <span>35.7</span></li>
-            <li>Hoefler <span>35.5</span></li>
-            <li>Decenzo <span>31.1</span></li>
-            <li>Ortiz <span>29.5</span></li>
-            <li>Berger <span>27.6</span></li>
-            <li>O'Neill <span>25.5</span></li>
-            <li>Rodriguez <span>15.7</span></li>
+            <li>{{ct.equipo}}</li>
         </ol>
     </section>
 </aside>
@@ -43,6 +33,7 @@
             <pie/>
     </div>
 </template>
+
 <script>
 import navbar from '~/components/generales/navbar.vue'
 import pie from '~/components/generales/pie.vue'
