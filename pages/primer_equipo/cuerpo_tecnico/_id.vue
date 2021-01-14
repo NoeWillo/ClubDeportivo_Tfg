@@ -4,8 +4,9 @@
             <div v-if="ct" class="cuerpo">
                 <aside class="player-card">
     <header>
+          <img alt="jugador.jpg" src="https://cdn.arnellebalane.com/images/codepen-day78/contestant.jpg">
         <h1>{{ct.name}}</h1>
-        <p>{{ct.posicion}}</p>
+        <p>{{ct.delegacion}}</p>
     </header>
     <section>
         <h2>Atributos</h2>
@@ -99,11 +100,11 @@ ol {
 .list {
     display: flex;
     flex-direction: column;
-    
 }
 
 .list.horizontal {
     flex-direction: row;
+    
 }
 
 .list.numbered {
@@ -144,10 +145,8 @@ ol {
     flex-direction: column;
     justify-content: center;
     height: 16rem;
-    padding: 0 2rem 0 17rem;
-    margin: -2rem -2rem 2rem -2rem;
+    padding: 0 2rem 0 0;
     border-radius: 1rem 1rem 0 0;
-    background: #fff url("https://cdn.arnellebalane.com/images/codepen-day78/contestant.jpg") left center no-repeat;
     }
 
 
@@ -156,6 +155,7 @@ ol {
     font-size: 3rem;
     text-transform: uppercase;
     font-size: 170%;
+    margin-top: 10px;
 }
 
 

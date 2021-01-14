@@ -4,6 +4,7 @@
             <div v-if="jugador" class="cuerpo">
                 <aside class="player-card">
     <header>
+        <img alt="jugador.jpg" src="https://cdn.arnellebalane.com/images/codepen-day78/contestant.jpg">
         <h1>{{jugador.name}}</h1>
         <p>{{jugador.posicion}}</p>
     </header>
@@ -143,10 +144,8 @@ ol {
     flex-direction: column;
     justify-content: center;
     height: 16rem;
-    padding: 0 2rem 0 17rem;
-    margin: -2rem -2rem 2rem -2rem;
+    padding: 0 2rem 0 0;
     border-radius: 1rem 1rem 0 0;
-    background: #fff url("https://cdn.arnellebalane.com/images/codepen-day78/contestant.jpg") left center no-repeat;
     }
 
 
@@ -155,6 +154,7 @@ ol {
     font-size: 3rem;
     text-transform: uppercase;
     font-size: 170%;
+    margin-top: 10px;
 }
 
 
