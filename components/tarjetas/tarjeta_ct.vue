@@ -1,133 +1,229 @@
 <template>
-    <div class="containerr">
-    <div class="player-card overlay">
-            <div class="player-name"><h2>{{name}}</h2></div>
-            <div class="position"><p>{{posicion}}</p></div>
-            <div class="club"><p>Club</p></div>
-            <div class="number"><p>27</p></div>
-        </div>
+  <div>
+  <div class="cardd">
+    <img class="pic" :src="image">
+    <div class="ttl">
+      <h2 class="h22">{{name}}</h2>
+      <h3 class="h33">{{posicion}}</h3>
+      <p class="subtitle">{{comentario}}</p>
+      <nuxt-link class="button" :to="id" >Mas</nuxt-link>
     </div>
+  </div>
+</div>
 </template>
 
 <script>
 export default {
-    props:{
-        name:{
-            type: String,
-            default:''
-        },
-        posicion:{
-            name:String,
-            default:''
-        }
+  props: {
+    name: {
+      type: String,
+      default: ''
+    },
+    comentario: {
+      type: String,
+      default: ''
+    },
+    posicion: {
+      type: String,
+      default: ''
+    },
+    peso: {
+      type: String,
+      default: ''
+    },
+    altura: {
+      type: String,
+      default: ''
+    },
+    image: {
+      type: String,
+      default: ''
+    },
+    clave: {
+      type: String,
+      default: ''
+    },
+    lugar_nacimiento: {
+      type: String,
+      default: ''
+    },
+    fecha_nacimiento: {
+      type: String,
+      default: ''
+    },
+    id:{
+      type:String,
+      default:''
     }
+  }
 }
 </script>
 
 <style>
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700,800i');
 
-body {
-    margin: 0;
-    font-family: 'Open Sans', sans-serif;
+.cardss {
+  display: grid;
+  grid-template-columns: auto auto auto; 
+  max-width: 1170px;
+  margin: 0 auto;
+  grid-gap: 9px;
+  align-items: center;
+  width: 100%;
+  margin-top: 50px;
+  margin-bottom: 30px;
+}
+.cardd {
+  max-width: 100%;
+  height: 450px;
+  overflow: hidden;
+  border-radius: 12px;
+  position: relative;
+  box-shadow: 0 0 9px #eee;
+  transition: all ease .6s;
 }
 
-h2 {
-    font-size: 2.4rem;
-    color: white;
-    margin: 0;
+.pic {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+  background-position: center center;
+  background-size: cover;
+}
+.pic img:hover {
+  transform: scale(1.2);
+}
+.pic img {
+  width: 100%;
+}
+.ttl {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: flex-end;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  margin-bottom: -36px;
+  text-align: center;
+  transition: all ease .3s;
+  transform: trasnlateX(12px);
+  z-index: 3;
+}
+.ttl:after {
+  content: '';
+  background: linear-gradient(to top, black, transparent);  
+  top:0;right:0;bottom:0;left:0;
+  position: absolute;
+  z-index: -1;
+  margin-bottom: -27px;
+}
+.ttl:hover {
+  transform: translateY(-12px);
 }
 
-p {
-    font-size: 1rem;
-    color: white;
-    margin: 0;
+.ttl .h22 {
+  font-size: 21px;
+  color: orange;
+  font-weight: bold;
+  text-transform: uppercase;
+  position: relative;
+}
+.ttl .h22:after {
+  content: '';
+  width: 27px;
+  border-top: 3px solid #fff;
+  display: block;
+  margin: 0 auto;
+  margin-top: 21px;
+}
+.ttl .h33 {
+  font-size: 16px;
+  color: rgb(170, 46, 46);
+  font-weight: bold;
+  text-transform: uppercase;
+  position: relative;
+  margin-top: 21px;
+}
+.ttl .h33:after {
+  content: '';
+  width: 22px;
+  border-top: 3px solid #fff;
+  display: block;
+  margin: 0 auto;
+  margin-top: 21px;
 }
 
-.containerr {
-    height: 100vh;
-    display: grid;
-    grid-template-columns: 1fr 2fr 1fr;
-    grid-template-rows: 1fr 2fr 1fr;
+.ttl .subtitle, a {
+  width: 60%;
+  margin: 0 auto;
+  line-height: 22px;
+  margin-bottom: 24px;
+  color: #fff;
+  transition-delay: 0.5s;
+  margin-top: 21px;
 }
 
-.player-card {
-    /* Positions the Card in the Browser */
-    grid-column: 2 / -2;
-    grid-row: 2 / -2;
-    /* Card Styling */
-    border-radius: 20px;
-    background-color:#4477C1;
-    /* A gradient going bottom to top */
-    background: 
-        linear-gradient(to bottom, transparent 50%, #ea0024),
-        url(https://stadiumastro-kentico.s3.amazonaws.com/stadiumastro/media/perform-article/2018/sep/30/bojan-cropped_194yua49elmja18tb8jp2y044a.jpg);
-        background-position: center;
-        background-size: cover;
-    display: grid;
-    grid-template-columns: 7fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    min-width: 400px;   
-    max-width: 600px;
-    min-height: 60vh; 
-    transition: 1s cubic-bezier(0.2, 0.8, 0.2, 1);
+.ttl .btn {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 auto 36px auto;
+  width: 72px;
+  height: 36px;
+  line-height: 36px;
+  border-radius: 27px;
+  border: 1px solid #fff; 
+  display: block;
+  overflow: hidden;
+  transition: all ease .3s;
+}
+.ttl .btn:hover {
+  width: 81px;
+  background: rgba(255,165,0,0.36);
 }
 
-.player-card img {
+@media (min-width: 0) and (max-width: 575px) {
+  .cardss {
+    grid-template-columns: 100%;
+  }
+  .cardd {
     max-width: 100%;
+  }
 }
-
-.player-card:hover {
-    box-shadow: 0 10px 20px rgba(0,0,0, 0.25);
-    transform: translateY(-5px);
-    cursor:pointer;
-    transform: scale(1.1, 1.1);
+@media (min-width: 576px) and (max-width: 767px) {
+  .cardss {
+    grid-template-columns: auto auto auto;
+  }
+  .cardd:nth-child(1) {
+    grid-column: 1 / 3;
+  }
+  .cardd:nth-child(2) {
+    grid-column: 3 / 5;
+  }
+  .cardd:nth-child(3) {
+    grid-column: 1 / 5;
+  }  
 }
-
-.player-name {
-    grid-row: 7 / span 2;
-    grid-column: 1 / span 2; 
-    align-self: end;
-    padding: 0rem 0rem 1rem 1rem;
+@media (min-width: 768px) and (max-width: 991px) {
+  .cardd:nth-child(1) {
+    grid-column: 1 / 3;
+  }
+  .cardd:nth-child(2) {
+    grid-column: 3 / 4;
+  }
+  .cardd:nth-child(3) {
+    grid-column: 1 / 4;
+  }  
 }
-
-.club {
-    font-size: 0.9rem;
-    text-transform: uppercase;
-    letter-spacing:0.3rem;
-    opacity: 0.5;
-    writing-mode: vertical-rl;
-    color: white;
-    grid-column: 2;
-    grid-row: 1 / span 5;
-    padding: 1.4rem;
-}
-
-.position {
-    grid-row: 7 / span 2;
-    grid-column: 1 / span 2; 
-    opacity: 0.6;
-    align-self: end;
-    padding: 0rem 0rem 4rem 1.2rem;
-}
-
-.position p {
-        font-size: 1.2rem;
-        letter-spacing: 0.25rem;
-        color: white;
-        margin: 0;
-}
-
-.number {
-    font-weight: 800;
-    padding: 0 1.4rem 0 1.4rem;
-    grid-column: 2;
-    grid-row: 7 / span 2;
-    align-self: end;
-}
-
-.number p {
-    font-size: 6rem;
-    margin: 0;
+@media (min-width: 576px) and (max-width: 991px) {
+  .cardss {
+    grid-template-columns: auto auto;
+  }
+  .cardd {
+    max-width: 100%;
+  }
 }
 </style>

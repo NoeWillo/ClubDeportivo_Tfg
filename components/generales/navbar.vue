@@ -13,10 +13,10 @@
                 Inicio
             </b-navbar-item>
              <b-navbar-dropdown label="Primer Equipo">
-                  <b-navbar-item href="/primer_equipo/plantilla">
+                  <b-navbar-item href="/primer_equipo/plantilla/plantilla">
                       Plantilla
                   </b-navbar-item>
-                  <b-navbar-item href="/primer_equipo/cuerpo_tecnico">
+                  <b-navbar-item href="/primer_equipo/cuerpo_tecnico/cuerpo_tecnico">
                       Cuerpo Tecnico
                   </b-navbar-item>
             </b-navbar-dropdown>

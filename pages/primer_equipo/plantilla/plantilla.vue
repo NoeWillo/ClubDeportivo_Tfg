@@ -12,6 +12,7 @@
                   :lugar_nacimiento="jugador.lugar_nacimiento"
                   :fecha_nacimiento="jugador.fecha_nacimiento"
                   :altura="jugador.altura"
+                  :id="jugador.id"
                   v-for="(jugador, index) in jugadores"
                   :key="index"
            />
@@ -26,6 +27,7 @@ import tarjeta_jugador from '@/components/tarjetas/tarjeta_jugador.vue'
 
 import { db } from '~/plugins/firebase'
 import pie from '~/components/generales/pie.vue'
+import navbar from '~/components/generales/navbar.vue'
 
 export default {
   created() {

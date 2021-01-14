@@ -6,7 +6,7 @@
       <h2 class="h22">{{name}}</h2>
       <h3 class="h33">{{posicion}}</h3>
       <p class="subtitle">{{comentario}}</p>
-      <a href="#" class="btn">Mas</a>
+      <nuxt-link class="button" :to="id" >Mas</nuxt-link>
     </div>
   </div>
 </div>
@@ -50,6 +50,10 @@ export default {
     fecha_nacimiento: {
       type: String,
       default: ''
+    },
+    id:{
+      type:String,
+      default:''
     }
   }
 }
