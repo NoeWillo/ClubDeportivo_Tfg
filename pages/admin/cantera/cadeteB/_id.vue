@@ -100,14 +100,12 @@
             <div class="field">
               <label class="label">Equipo</label>
               <div class="control">
-                <div class="select">
                   <input
                   v-model="jugador.equipo"
                   class="input"
                   type="text"
                   placeholder="Equipo actual"
                 />
-                </div>
               </div>
             </div>
             <div class="field">
