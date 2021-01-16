@@ -27,14 +27,8 @@
                   <b-navbar-item href="/club/instalaciones">
                       Instalaciones
                   </b-navbar-item>
-                  <b-navbar-item href="/club/socios">
-                      Socios
-                  </b-navbar-item>
                   <b-navbar-item href="/club/patrocinadores">
                       Patrocinadores
-                  </b-navbar-item>
-                  <b-navbar-item href="/club/acreditaciones">
-                      Acreditaciones
                   </b-navbar-item>
             </b-navbar-dropdown>
             <b-navbar-dropdown label="Cantera">

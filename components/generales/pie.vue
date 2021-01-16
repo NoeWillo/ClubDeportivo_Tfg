@@ -31,9 +31,7 @@
               <ul>
                 <li><a href="/club/historia">Historia</a></li>
                 <li><a href="/club/instalaciones">Instalaciones</a></li>
-                <li><a href="/club/socios">Socios</a></li>
                 <li><a href="/club/patrocinadores">Patrocinadores</a></li>
-                <li><a href="/club/acreditaciones">Acreditaciones</a></li>
               </ul>
            </div>
            <div class="col_4">

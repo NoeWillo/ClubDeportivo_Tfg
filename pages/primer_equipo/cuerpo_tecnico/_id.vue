@@ -4,7 +4,7 @@
             <div v-if="ct" class="cuerpo">
                 <aside class="player-card">
     <header>
-          <img alt="jugador.jpg" src="https://cdn.arnellebalane.com/images/codepen-day78/contestant.jpg">
+        <img alt="jugador.jpg" src="~/assets/primer_equipo/images/jugador.jpg" class="img">
         <h1>{{ct.name}}</h1>
         <p>{{ct.delegacion}}</p>
     </header>
@@ -261,6 +261,9 @@ ol {
     background-color: #37ceff;
 }
 
+.img{
+    width:100% ;
+}
 
 /** Overlay Layer **/
 .overlay {
