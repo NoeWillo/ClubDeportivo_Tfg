@@ -20,8 +20,8 @@
                 Primer Equipo
               </div>  
               <ul>
-                <li><a href="/primer_equipo/plantilla">Plantilla del Primer Equipo</a></li>
-                <li><a href="/primer_equipo/cuerpo_tecnico">Cuerpo Técnico</a></li>
+                <li><a href="/primer_equipo/plantilla/plantilla">Plantilla del Primer Equipo</a></li>
+                <li><a href="/primer_equipo/cuerpo_tecnico/cuerpo_tecnico">Cuerpo Técnico</a></li>
               </ul>
            </div>
            <div class="col_3">
