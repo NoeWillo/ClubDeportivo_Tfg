@@ -1,5 +1,5 @@
 <template>
-  <div class="section">
+  <div class="section" v-if="ct">
     <div class="columns">
       <div class="column is-6 is-offset-3">
         <div class="columns">
@@ -135,9 +135,9 @@
                 <button
                   class="button is-link"
                   type="button"
-                  @click.prevent="onUpdateButton"
+                  @click.prevent="onSubmitButton"
                 >
-                  Actualizar
+                  Save
                 </button>
               </div>
             </div>

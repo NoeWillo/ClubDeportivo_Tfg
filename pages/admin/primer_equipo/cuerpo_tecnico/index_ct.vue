@@ -54,11 +54,11 @@ export default {
         const response = db.collection('primer_equipo_ct').get()
           response.then((snapshot) => {
               snapshot.forEach((doc) => {
-                  const persona = { 
+                  const jugador = { 
                       id:doc.id,
                       ...doc.data()
                   }
-                  this.ct.push(persona)
+                  this.ct.push(jugador)
                   })
               })
               .catch((error) => {
