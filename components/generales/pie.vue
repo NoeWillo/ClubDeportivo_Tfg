@@ -1,7 +1,6 @@
 <template>
 <div>
      <div class="footer">
-         <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
         <div class="footer_menu">
            <div class="col_1">
               <div class="title">
@@ -56,6 +55,18 @@
     </div>
 </div>
 </template>
+
+<script>
+export default {
+  mounted: function() {
+    const script = document.createElement("script");
+    script.src =
+      "https://kit.fontawesome.com/b99e675b6e.js";
+    script.addEventListener("load", this.setLoaded);
+    document.body.appendChild(script);
+  },
+}
+</script>
 
 <style>
 @import url("https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap");
