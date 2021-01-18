@@ -47,9 +47,9 @@
         </div>
         <div class="social_media">
             <ul>
-                <li><a class="facebook" href="#"><i class="fab fa-facebook-f"></i></a></li>
-                <li><a class="twitter" href="#"><i class="fab fa-twitter"></i></a></li>
-                <li><a class="instagram" href="#"><i class="fab fa-instagram"></i></a></li>
+                <li><a class="facebook" href="https://es-es.facebook.com/"><i class="fab fa-facebook-f"></i></a></li>
+                <li><a class="twitter" href="https://twitter.com/?lang=es"><i class="fab fa-twitter"></i></a></li>
+                <li><a class="instagram" href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a></li>
             </ul>
             <p>Copyright © Noé Galán Rosco</p>
         </div>
