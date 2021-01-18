@@ -14,7 +14,7 @@
         <a href="/">Inicio</a>
       </li>
       <li>
-        <a href="/admin">Admin</a>
+        <a href="/admin/nuevo_admin/register">Registrar un nuevo admin</a>
       </li>
       <li>      
         <label for="primer_equipo">Primer Equipo</label>
@@ -183,12 +183,26 @@
             </li>
           </ul>
         </div>
-      </li>       
+      </li>
+        <button class="button is-danger" @click="logout">Cerrar Sesion</button>
     </ul>
   </div>
 </div>
 
 </template>
+
+<script>
+import {firebase} from '~/plugins/firebase'
+export default {
+  middleware: 'auth',
+  methods:{
+    logout(){
+      firebase.auth().signOut()
+      this.$router.push('/')
+    }
+  }
+}
+</script>
 
 <style>
 
@@ -305,9 +319,3 @@
       font-size: 26px;
     }
 </style>
-
-<script>
-export default {
-
-}
-</script>

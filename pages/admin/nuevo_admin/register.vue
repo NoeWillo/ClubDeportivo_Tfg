@@ -15,9 +15,8 @@
         <input type="password" placeholder="Contraseña" v-model="password">
       </div>
       <div class="buttons">
-        <button class="button is-info" @click="login">Login</button>
-        <nuxt-link class="button is-danger" to="/">Cancelar</nuxt-link>
-      </div>
+        <button class="button is-info" @click="register">Registrar</button>
+        <nuxt-link class="button is-danger" to="/">Cancelar</nuxt-link>      </div>
     </div>
   </div>
 </div>
@@ -26,25 +25,29 @@
 
 <script>
 import {firebase} from '~/plugins/firebase'
+
 export default {
+  
     data(){
-        return{
-            email:'',
-            password:''
-        }
+      return{
+        email:'',
+        password:''
+      }
     },
-    methods:{
-        login(){
-            const response = firebase.auth().signInWithEmailAndPassword(this.email, this.password)
+
+    methods: {
+      register(){
+         const response = firebase.auth().createUserWithEmailAndPassword(this.email, this.password)
                 response.then(data => {
                     this.$router.push('/admin')
                 })
-        }
+      }
     }
 }
 </script>
 
 <style>
+
 .landing {
   width: 100%;
   height: 100vh;
@@ -52,7 +55,7 @@ export default {
 }
 
 .landing .img-left {
-  background-image: url("https://estadiosdefutbol.com/wp-content/gallery/navalcarnero/balon-parado-estadio-navalcarnero.jpg");
+  background-image: url("https://estadiosdefutbol.com/wp-content/gallery/navalcarnero/grada-estadio-mariano-gonzalez-navalcarnero.jpg");
   background-size: cover;
   height: 100vh;
   flex-grow: 1;

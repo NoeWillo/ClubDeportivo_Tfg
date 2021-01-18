@@ -41,7 +41,7 @@
               <label class="label">Precio</label>
               <div class="control">
                 <input
-                  v-model="producto.precio"
+                  v-on="producto.precio"
                   class="input"
                   type="number"
                   placeholder="10"
@@ -72,9 +72,9 @@
                 <button
                   class="button is-link"
                   type="button"
-                  @click.prevent="onSubmitButton"
+                  @click.prevent="onUpdateButton"
                 >
-                  Crear
+                  Actualizar
                 </button>
               </div>
             </div>

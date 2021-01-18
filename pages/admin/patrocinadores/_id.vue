@@ -72,9 +72,9 @@
                 <button
                   class="button is-link"
                   type="button"
-                  @click.prevent="onSubmitButton"
+                  @click.prevent="onUpdateButton"
                 >
-                  Crear
+                  Actualizar
                 </button>
               </div>
             </div>

@@ -63,11 +63,8 @@
         <template slot="end">
             <b-navbar-item tag="div">
                 <div class="buttons">
-                    <a class="button is-primary" href="/login_out/register">
-                        <strong>Sign up</strong>
-                    </a>
-                    <a class="button is-light" href="/login_out/login">
-                        Log in
+                    <a class="button is-primary" href="/login_out/login">
+                        <strong>Iniciar Sesion (admin)</strong>
                     </a>
                 </div>
             </b-navbar-item>

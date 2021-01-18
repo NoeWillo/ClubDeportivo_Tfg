@@ -1,6 +1,6 @@
 <template>
     <div>
-        
+      <navbar/>
 <div id="app">
   <header>
     <h1>Tienda de productos oficiales</h1>
@@ -36,17 +36,17 @@
           <tbody>
             <tr class="cart-item" v-for="(item, id) in cart" :key="'id-' + id">
               <td>
-                <h4 class="title">{{ item.name }}</h4>
+                <h4 class="title">{{ item.title }}</h4>
               </td>
               <td>
-                <div class="price">{{ item.precio | currency }}</div>
+                <div class="price">{{ item.price | currency }}</div>
               </td>
               <td>
                 <div class="quantity">
                    {{ item.quantity }}<span class="qty-handler"><span @click="add(item)">+</span><span @click="sub(item)">-</span></span></div>
               </td>
               <td>
-                <div class="total">{{ item.precio * item.quantity | currency }}</div>
+                <div class="total">{{ item.price * item.quantity | currency }}</div>
               </td>
             </tr>
           </tbody>
@@ -56,6 +56,12 @@
                 <h4 class="total-title">Total</h4>
               </th>
               <th>{{ total | currency }}</th>
+            </tr>
+            <tr>
+              <th colspan="3">
+                <div id="paypal-button"> </div>
+              </th>
+              <th><nuxt-link class="button is-info" :to="{path:'/tienda/pago', query: {precio : this.total }}"> Pagar </nuxt-link></th>
             </tr>
           </tfoot>
         </table>
@@ -85,27 +91,37 @@
     </div>
   </div>
 </div>
+<div id="paypal-button"></div>
+  <pie/>
     </div>
 </template>
 
 <script>
+import pie from '~/components/generales/pie.vue';
+import navbar from '~/components/generales/navbar.vue'
 import { db } from '~/plugins/firebase'
 
 export default {
+  components: { pie },
   data() {
     return {
       products: [],
       cart: [],
-      total: 0
+      total: 0,
+      compra:{
+        description:"Pago en la tienda de ClubDeportivoTFG"
+      },
     };
   },
 
   created() {
     this.getDocuments()
   },
+  
 
   methods: {
-    getDocuments(){
+    //BBDD
+     getDocuments(){
         this.products = []
         const response = db.collection('productos_tienda').get()
           response.then((snapshot) => {
@@ -120,11 +136,11 @@ export default {
               .catch((error) => {
               console.log(error)
               })
-      },
-
+      }, 
+    //Carrito
     addItem(prod){
       // Incrementa el precio total
-      this.total += prod.price;
+      this.total += prod.precio;
       
       let inCart = false; 
       // Aumenta la cantidad del producto
@@ -139,8 +155,9 @@ export default {
       if(! inCart){
         this.cart.push({
           id: prod.id,
-          title: prod.title,
-          price: prod.price,
+          title: prod.name,
+          price: prod.precio,
+          description:prod.descripcion,
           quantity: 1
         }); 
       }
@@ -164,9 +181,13 @@ export default {
     }
   },
   filters: {
-    currency(precio){
-      return  precio.toFixed(2) + ' €' ;
+    currency(price){
+      return  price.toFixed(2) + ' €' ;
     }
+  },
+  components:{
+    navbar,
+    pie
   }
 }
 </script>
