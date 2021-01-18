@@ -6,7 +6,7 @@
       <h2 class="h22">{{name}}</h2>
       <h3 class="h33">{{posicion}}</h3>
       <p class="subtitle">{{comentario}}</p>
-      <nuxt-link class="button" :to="id" >Mas</nuxt-link>
+      <nuxt-link class="button" :to="{path: path, query: {id : id }}" >Mas</nuxt-link>
     </div>
   </div>
 </div>
@@ -52,6 +52,10 @@ export default {
       default: ''
     },
     id:{
+      type:String,
+      default:''
+    },
+    path:{
       type:String,
       default:''
     }

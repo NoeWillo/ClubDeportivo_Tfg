@@ -15,6 +15,7 @@
                   :id="jugador.id"
                   v-for="(jugador, index) in jugadores"
                   :key="index"
+                  :path="path"
            />
      </div>
      </div>
@@ -47,7 +48,8 @@ export default {
 
   data(){
     return{
-      jugadores: []
+      jugadores: [],
+      path: '/cantera/juvenilC/jugador'
     }
   },
 

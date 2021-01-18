@@ -54,7 +54,7 @@ export default {
   },
 
   created() {
-    const response = db.collection('cantera_infantilA').doc(this.$route.params.id).get()
+    const response = db.collection('cantera_cadeteB').doc(this.$route.query.id).get()
     response.then(doc => {
       if(doc.exists) {
         this.jugador = doc.data()

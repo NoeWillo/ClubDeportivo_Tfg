@@ -16,6 +16,7 @@
                   :id="ct.id"
                   v-for="(ct, index) in cuerpo_tecnico"
                   :key="index"
+                  :path="path"
            />
      </div>
      </div>
@@ -48,7 +49,8 @@ export default {
 
   data(){
     return{
-      cuerpo_tecnico: []
+      cuerpo_tecnico: [],
+      path: '/primer_equipo/cuerpo_tecnico/ct'
     }
   },
 

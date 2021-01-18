@@ -6,7 +6,7 @@
     <header>
         <img alt="jugador.jpg" :src="jugador.image" class="imgg">
         <h1>{{jugador.name}}</h1>
-        <p>{{jugador.posicion}}</p>
+        <p>{{jugador.delegacion}}</p>
     </header>
     <section>
         <h2>Atributos</h2>
@@ -54,7 +54,7 @@ export default {
   },
 
   created() {
-    const response = db.collection('primer_equipo_jugadores').doc(this.$route.params.id).get()
+    const response = db.collection('primer_equipo_ct').doc(this.$route.query.id).get()
     response.then(doc => {
       if(doc.exists) {
         this.jugador = doc.data()
