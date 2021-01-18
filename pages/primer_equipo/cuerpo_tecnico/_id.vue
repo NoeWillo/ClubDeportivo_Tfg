@@ -1,31 +1,31 @@
 <template>
     <div>
         <navbar/>
-            <div v-if="ct" class="cuerpo">
+            <div v-if="jugador" class="cuerpo">
                 <aside class="player-card">
     <header>
-        <img alt="jugador.jpg" src="~/assets/primer_equipo/images/jugador.jpg" class="img">
-        <h1>{{ct.name}}</h1>
-        <p>{{ct.delegacion}}</p>
+        <img alt="jugador.jpg" :src="jugador.image" class="imgg">
+        <h1>{{jugador.name}}</h1>
+        <p>{{jugador.posicion}}</p>
     </header>
     <section>
         <h2>Atributos</h2>
         <ul class="list horizontal">
-            <li>Peso: {{ct.peso}}</li>
-            <li>Altura: {{ct.altura}}</li>
+            <li>Peso: {{jugador.peso}}</li>
+            <li>Altura: {{jugador.altura}}</li>
         </ul>
     </section>
     <section>
         <h2>Lugar y fecha de nacimiento</h2>
         <ul class="list horizontal">
-            <li>{{ct.lugar_nacimiento}}</li>
-            <li>{{ct.fecha_nacimiento}}</li>
+            <li>{{jugador.lugar_nacimiento}}</li>
+            <li>{{jugador.fecha_nacimiento}}</li>
         </ul>
     </section>
     <section>
         <h2>Equipo</h2>
         <ol class="list numbered">
-            <li>{{ct.equipo}}</li>
+            <li>{{jugador.equipo}}</li>
         </ol>
     </section>
 </aside>
@@ -34,7 +34,6 @@
             <pie/>
     </div>
 </template>
-
 <script>
 import navbar from '~/components/generales/navbar.vue'
 import pie from '~/components/generales/pie.vue'
@@ -50,7 +49,7 @@ export default {
 
   data() {
     return {
-      ct: null
+      jugador: null
     }
   },
 
@@ -58,7 +57,7 @@ export default {
     const response = db.collection('primer_equipo_ct').doc(this.$route.params.id).get()
     response.then(doc => {
       if(doc.exists) {
-        this.ct = doc.data()
+        this.jugador = doc.data()
       }
     })
   }
@@ -75,6 +74,10 @@ export default {
     box-sizing: border-box;
 }
 
+.imgg{
+    max-width: 300px;
+    max-height: 600px;
+}
 
 .cuerpo {
     display: flex;
@@ -85,7 +88,7 @@ export default {
     -webkit-font-smoothing: antialiased;
     line-height: 1;
     color: #0b0b0b;
-    background: url("https://cdn.arnellebalane.com/images/codepen-day78/background.jpg") center center no-repeat;
+    background: url("https://ak.picdn.net/shutterstock/videos/1030617416/thumb/1.jpg") center center no-repeat;
     background-size: cover;
 }
 
@@ -261,9 +264,6 @@ ol {
     background-color: #37ceff;
 }
 
-.img{
-    width:100% ;
-}
 
 /** Overlay Layer **/
 .overlay {

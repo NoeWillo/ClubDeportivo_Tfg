@@ -12,7 +12,7 @@
         <ul class="products-list">
           <li class="product" v-for="(prod, ind) in products" :key="'ind-' + ind">
             <div class="box">
-              <div class="image"></div>
+              <img class="image" :src="prod.image">
               <h3 class="title">{{ prod.name }}</h3>
               <p class="price">{{ prod.precio | currency }}</p>
               <button @click="addItem(prod)">Añadir al carrito</button>

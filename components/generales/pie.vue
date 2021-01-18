@@ -39,9 +39,9 @@
                 Cantera 
               </div>  
               <ul>
-                <li><a href="/cantera/infantilA">Infantil A</a></li>
-                <li><a href="/cantera/cadeteB">Cadete B</a></li>
-                <li><a href="/cantera/JuvenilC">Juvenil C</a></li>
+                <li><a href="/cantera/infantilA/plantilla">Infantil A</a></li>
+                <li><a href="/cantera/cadeteB/plantilla">Cadete B</a></li>
+                <li><a href="/cantera/JuvenilC/plantilla">Juvenil C</a></li>
               </ul>
           </div>
         </div>

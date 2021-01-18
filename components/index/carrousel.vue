@@ -2,11 +2,7 @@
 <div id="container">
     <b-carousel>
         <b-carousel-item v-for="(carousel, i) in carousels" :key="i">
-            <section :class="`hero is-medium is-${carousel.color}`">
-                <div class="hero-body has-text-centered">
-                    <h1 class="title">{{carousel.text}}</h1>
-                </div>
-            </section>
+            <img :src="carousel.image">
         </b-carousel-item>
     </b-carousel>
 </div>
@@ -17,11 +13,11 @@ export default {
     data(){
         return {
             carousels: [
-                { text: 'Slide 1', color: 'primary' },
-                { text: 'Slide 2', color: 'info' },
-                { text: 'Slide 3', color: 'success' },
-                { text: 'Slide 4', color: 'warning' },
-                { text: 'Slide 5', color: 'danger' }
+                {  image: './assets/carrousel/imagen1.jpg' },
+                {  image: './assets/carrousel/imagen2.jpg' },
+                {  image: './assets/carrousel/imagen3.jpg' },
+                {  image: './assets/carrousel/imagen4.jpg' },
+                {  image: '../../assets/carrousel/imagen5.jpg' }
             ]
         }
     },

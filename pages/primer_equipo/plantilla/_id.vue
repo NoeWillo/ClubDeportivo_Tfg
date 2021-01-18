@@ -4,7 +4,7 @@
             <div v-if="jugador" class="cuerpo">
                 <aside class="player-card">
     <header>
-        <img alt="jugador.jpg" src="https://cdn.arnellebalane.com/images/codepen-day78/contestant.jpg">
+        <img alt="jugador.jpg" :src="jugador.image" class="imgg">
         <h1>{{jugador.name}}</h1>
         <p>{{jugador.posicion}}</p>
     </header>
@@ -74,6 +74,10 @@ export default {
     box-sizing: border-box;
 }
 
+.imgg{
+    max-width: 300px;
+    max-height: 600px;
+}
 
 .cuerpo {
     display: flex;
@@ -84,7 +88,7 @@ export default {
     -webkit-font-smoothing: antialiased;
     line-height: 1;
     color: #0b0b0b;
-    background: url("https://cdn.arnellebalane.com/images/codepen-day78/background.jpg") center center no-repeat;
+    background: url("https://ak.picdn.net/shutterstock/videos/1030617416/thumb/1.jpg") center center no-repeat;
     background-size: cover;
 }
 

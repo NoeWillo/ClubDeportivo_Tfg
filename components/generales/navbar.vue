@@ -32,13 +32,13 @@
                   </b-navbar-item>
             </b-navbar-dropdown>
             <b-navbar-dropdown label="Cantera">
-                  <b-navbar-item href="/cantera/infantilA">
+                  <b-navbar-item href="/cantera/infantilA/plantilla">
                       InfantilA
                   </b-navbar-item>
-                   <b-navbar-item href="/cantera/cadeteB">
+                   <b-navbar-item href="/cantera/cadeteB/plantilla">
                       CadeteB
                   </b-navbar-item>
-                   <b-navbar-item href="/cantera/juvenilC">
+                   <b-navbar-item href="/cantera/juvenilC/plantilla">
                       JuvenilC
                   </b-navbar-item>
             </b-navbar-dropdown>

@@ -1,7 +1,6 @@
 <template>
 <div>
     <navbar></navbar>
-    <carrousel></carrousel>
     <tarjeta-noticia
         :titulo="noticia.titulo"
         :autor="noticia.autor"
