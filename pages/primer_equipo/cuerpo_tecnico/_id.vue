@@ -6,7 +6,7 @@
     <header>
         <img alt="jugador.jpg" :src="jugador.image" class="imgg">
         <h1>{{jugador.name}}</h1>
-        <p>{{jugador.posicion}}</p>
+        <p>{{jugador.delegacion}}</p>
     </header>
     <section>
         <h2>Atributos</h2>
