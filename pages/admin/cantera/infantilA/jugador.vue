@@ -154,7 +154,7 @@ export default {
     }
   },
   created() {
-    const response = db.collection('cantera_infantilA').doc(this.$route.params.id).get()
+    const response = db.collection('cantera_infantilA').doc(this.$route.query.id).get()
     response.then(doc => {
       if(doc.exists) {
         this.jugador = doc.data()
@@ -163,7 +163,7 @@ export default {
   },
   methods:{
     onUpdateButton() {
-      const reference = db.collection('cantera_infantilA').doc(this.$route.params.id)
+      const reference = db.collection('cantera_infantilA').doc(this.$route.query.id)
         const response = reference.update(this.jugador)
           response.then(() => {
             this.$router.back()

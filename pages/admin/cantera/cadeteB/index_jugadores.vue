@@ -20,7 +20,7 @@
               <td>{{ item.id }}</td>
               <td>{{ item.name }}</td>
               <td>
-                <nuxt-link class="button" :to="item.id" >
+                <nuxt-link class="button" :to="{path:'/admin/cantera/cadeteB/jugador', query: {id : item.id }}" >
                   Editar
                 </nuxt-link>
                 <button class="button is-danger" @click="deleteDocument(item.id)">

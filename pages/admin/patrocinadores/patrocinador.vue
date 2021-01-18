@@ -1,10 +1,10 @@
 <template>
-  <div class="section" v-if="producto">
+  <div class="section" v-if="patrocinador">
     <div class="columns">
       <div class="column is-6 is-offset-3">
         <div class="columns">
           <div class="column">
-            <h2 class="title is-2">Nuevo producto</h2>
+            <h2 class="title is-2">Nuevo Patrocinador</h2>
           </div>
         </div>
         <div class="columns box">
@@ -15,8 +15,8 @@
                 <input
                   class="input"
                   type="text"
-                  v-model="producto.name"
-                  placeholder="Nombre del producto"
+                  v-model="patrocinador.name"
+                  placeholder="Nombre del patrocinador"
                 />
               </div>
             </div>
@@ -30,21 +30,21 @@
               <label class="label">Imagen</label>
               <div class="control">
                 <input
-                  v-model="producto.image"
+                  v-model="patrocinador.image"
                   class="input"
                   type="text"
-                  placeholder="Imagen del producto"
+                  placeholder="Imagen del patrocinador"
                 />
               </div>
             </div>
             <div class="field">
-              <label class="label">Precio</label>
+              <label class="label">Url del patrocinador</label>
               <div class="control">
                 <input
-                  v-on="producto.precio"
+                  v-model="patrocinador.url"
                   class="input"
-                  type="number"
-                  placeholder="10"
+                  type="url"
+                  placeholder="Fecha del Patrocinador"
                 />
               </div>
             </div>
@@ -52,11 +52,11 @@
               <label class="label">Descripcion</label>
               <div class="control">
                 <textarea
-                  v-model="producto.descripcion"
+                  v-model="patrocinador.descripcion"
                   class="textarea"
                   type="textarea"
                   rows="10"
-                  placeholder="Descripcion del producto"
+                  placeholder="Descripcion del patrocinador"
                 />
               </div>
             </div>
@@ -90,21 +90,21 @@ import { db } from '~/plugins/firebase'
 export default {
   data() {
     return {
-      producto: null
+      patrocinador: null
     }
   },
   created() {
-    const response = db.collection('productos_tienda').doc(this.$route.params.id).get()
+    const response = db.collection('patrocinadores').doc(this.$route.query.id).get()
     response.then(doc => {
       if(doc.exists) {
-        this.producto = doc.data()
+        this.patrocinador = doc.data()
       }
     })
   },
   methods:{
     onUpdateButton() {
-      const reference = db.collection('productos_tienda').doc(this.$route.params.id)
-        const response = reference.update(this.producto)
+      const reference = db.collection('patrocinadores').doc(this.$route.query.id)
+        const response = reference.update(this.patrocinador)
           response.then(() => {
             this.$router.back()
           }).catch(error => {

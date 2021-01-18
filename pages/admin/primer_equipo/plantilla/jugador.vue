@@ -1,10 +1,10 @@
 <template>
-  <div class="section">
+  <div class="section" v-if="jugador">
     <div class="columns">
       <div class="column is-6 is-offset-3">
         <div class="columns">
           <div class="column">
-            <h2 class="title is-2">Nuevo Cuerpo Técnico</h2>
+            <h2 class="title is-2">Nuevo Jugador</h2>
           </div>
         </div>
         <div class="columns box">
@@ -15,25 +15,25 @@
                 <input
                   class="input"
                   type="text"
-                  v-model="ct.name"
-                  placeholder="Nombre del ct"
+                  v-model="jugador.name"
+                  placeholder="Nombre del jugador"
                 />
               </div>
             </div>
             <div class="field">
               <label class="label">Clave</label>
               <div class="control">
-                <input class="input" type="text" :placeholder="clave" disabled />
+                <input class="input" type="text" :placeholder="jugador.clave" disabled />
               </div>
             </div>
             <div class="field">
               <label class="label">Imagen</label>
               <div class="control">
                 <input
-                  v-model="ct.image"
+                  v-model="jugador.image"
                   class="input"
                   type="text"
-                  placeholder="Imagen del ct"
+                  placeholder="Imagen del jugador"
                 />
               </div>
             </div>
@@ -41,7 +41,7 @@
               <label class="label">Fecha Nacimiento</label>
               <div class="control">
                 <input
-                  v-model="ct.fecha_nacimiento"
+                  v-model="jugador.fecha_nacimiento"
                   class="input"
                   type="text"
                   placeholder="Fecha de nacimiento"
@@ -52,7 +52,7 @@
               <label class="label">Altura</label>
               <div class="control">
                 <input
-                  v-model="ct.altura"
+                  v-model="jugador.altura"
                   class="input"
                   type="text"
                   placeholder="Altura en cm"
@@ -63,7 +63,7 @@
               <label class="label">Peso</label>
               <div class="control">
                 <input
-                  v-model="ct.peso"
+                  v-model="jugador.peso"
                   class="input"
                   type="text"
                   placeholder="Peso en kg"
@@ -74,7 +74,7 @@
               <label class="label">Lugar Nacimiento</label>
               <div class="control">
                 <div class="select">
-                  <select v-model="ct.lugar_nacimiento">
+                  <select v-model="jugador.lugar_nacimiento">
                     <option></option>
                     <option value="Madrid">Madrid</option>
                     <option value="Barcelona">Barcelona</option>
@@ -84,27 +84,24 @@
               </div>
             </div>
             <div class="field">
-              <label class="label">Delegacion</label>
+              <label class="label">Posicion</label>
               <div class="control">
                 <div class="select">
-                  <select v-model="ct.delegacion">
+                  <select v-model="jugador.posicion">
                     <option></option>
-                    <option value="Entrenador">Entrenador</option>
-                    <option value="2ºEntrenador">2ºEntrenador</option>
-                    <option value="3ºEntrenador">3ºEntrenador</option>
-                    <option value="Preparador Físico">Preparador Físico</option>
-                    <option value="Psicólogo">Psicólogo</option>
-                    <option value="Analista">Analista</option>
-                    <option value="Utillero">Utillero</option>
+                    <option value="Delantero">Delantero</option>
+                    <option value="Centrocampista">Centrocampista</option>
+                    <option value="Defensa">Defensa</option>
+                    <option value="Portero">Portero</option>
                   </select>
                 </div>
               </div>
             </div>
-            <div class="field">
+             <div class="field">
               <label class="label">Equipo</label>
               <div class="control">
                   <input
-                  v-model="ct.equipo"
+                  v-model="jugador.equipo"
                   class="input"
                   type="text"
                   placeholder="Equipo actual"
@@ -115,7 +112,7 @@
               <label class="label">Comentario</label>
               <div class="control">
                 <textarea
-                  v-model="ct.comentario"
+                  v-model="jugador.comentario"
                   class="textarea"
                   type="textarea"
                   rows="10"
@@ -153,21 +150,21 @@ import { db } from '~/plugins/firebase'
 export default {
   data() {
     return {
-      ct: null
+      jugador: null
     }
   },
   created() {
-    const response = db.collection('primer_equipo_ct').doc(this.$route.params.id).get()
+    const response = db.collection('primer_equipo_jugadores').doc(this.$route.query.id).get()
     response.then(doc => {
       if(doc.exists) {
-        this.ct = doc.data()
+        this.jugador = doc.data()
       }
     })
   },
   methods:{
     onUpdateButton() {
-      const reference = db.collection('primer_equipo_ct').doc(this.$route.params.id)
-        const response = reference.update(this.ct)
+      const reference = db.collection('primer_equipo_jugadores').doc(this.$route.query.id)
+        const response = reference.update(this.jugador)
           response.then(() => {
             this.$router.back()
           }).catch(error => {
